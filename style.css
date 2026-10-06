@@ -1,0 +1,1028 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: #111;
+  color: #f5f1e8;
+  font-family:
+      "Helvetica Neue",
+      Helvetica,
+      Arial,
+      sans-serif;
+
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =========================================================
+ LAUNCH
+========================================================= */
+
+.launch {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  background: #111;
+
+  overflow: hidden;
+
+  transition:
+      opacity 1.4s cubic-bezier(.77, 0, .18, 1),
+      visibility 1.4s;
+}
+
+
+/* Video */
+
+.intro-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0;
+
+  transition:
+      opacity 1.2s ease;
+}
+
+.launch.video-ready .intro-video {
+  opacity: 1;
+}
+
+
+/* dark cinematic layer */
+
+.launch-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+      linear-gradient(
+          180deg,
+          rgba(0,0,0,.35),
+          rgba(0,0,0,.05) 40%,
+          rgba(0,0,0,.55)
+      );
+
+  pointer-events: none;
+}
+
+
+/* launch information */
+
+.launch-content {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  padding:
+      32px
+      38px
+      38px;
+
+  z-index: 2;
+}
+
+
+.launch-mark {
+  display: flex;
+  gap: 16px;
+
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,.7);
+}
+
+.launch-mark span:first-child {
+  opacity: .45;
+}
+
+
+/* bottom label */
+
+.launch-footer {
+  position: absolute;
+  left: 38px;
+  right: 38px;
+  bottom: 16px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 9px;
+  letter-spacing: .17em;
+
+  color: rgba(255,255,255,.5);
+
+  z-index: 2;
+}
+
+
+/* launch disappears */
+
+.launch.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+ HOME
+========================================================= */
+
+.home {
+  position: relative;
+
+  min-height: 100vh;
+
+  background: #087a3d;
+
+  overflow: hidden;
+}
+
+
+/* actual uploaded photograph */
+
+.home-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("assets/shot-3-mahjong.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  background-color: #087a3d;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* subtle green / warm grading */
+
+.home-vignette {
+  position: absolute;
+  inset: 0;
+
+  background:
+      linear-gradient(
+          180deg,
+          rgba(0,0,0,.26),
+          rgba(0,0,0,0) 30%,
+          rgba(0,0,0,.16) 100%
+      );
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* film grain */
+
+.home-grain {
+  position: absolute;
+  inset: -50%;
+
+  opacity: .075;
+
+  pointer-events: none;
+
+  z-index: 2;
+
+  background-image:
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+
+  animation:
+      grain .25s steps(2) infinite;
+}
+
+
+@keyframes grain {
+
+  0% {
+      transform: translate(0,0);
+  }
+
+  25% {
+      transform: translate(2%,-2%);
+  }
+
+  50% {
+      transform: translate(-2%,2%);
+  }
+
+  75% {
+      transform: translate(2%,2%);
+  }
+
+  100% {
+      transform: translate(-2%,-2%);
+  }
+
+}
+
+
+/* =========================================================
+ HEADER
+========================================================= */
+
+.site-header {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding:
+      30px 38px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  z-index: 10;
+}
+
+
+/* logo */
+
+.logo-mark {
+  position: relative;
+  width: 92px;
+  height: 92px;
+  display: block;
+  color: white;
+  z-index: 11;
+}
+
+.logo-mark img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+}
+
+.logo-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: logoRotate 18s linear infinite;
+}
+
+.logo-ring text {
+  fill: rgba(255, 255, 255, 0.9);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@keyframes logoRotate {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/* navigation */
+
+.main-nav {
+  display: flex;
+  gap: 27px;
+
+  padding-top: 5px;
+}
+
+
+.main-nav a {
+  position: relative;
+
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,.78);
+
+  transition:
+      color .3s ease;
+}
+
+
+.main-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: white;
+
+  transition:
+      width .35s ease;
+}
+
+
+.main-nav a:hover {
+  color: white;
+}
+
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+ HERO
+========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding: 150px 8vw 42px;
+}
+
+
+/* top location */
+
+.hero-location {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 9px;
+
+  letter-spacing: .17em;
+
+  color: rgba(255,255,255,.68);
+}
+
+
+.hero-location .line {
+  width: 34px;
+  height: 1px;
+
+  background:
+      rgba(255,255,255,.6);
+}
+
+
+/* main copy */
+
+.hero-copy {
+  max-width: 570px;
+  margin-top: 5vh;
+  transform: none;
+}
+
+
+.eyebrow {
+  margin-bottom: 22px;
+
+  font-size: 9px;
+
+  letter-spacing: .22em;
+
+  color: rgba(255,255,255,.72);
+}
+
+
+.hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(70px, 9vw, 135px);
+  font-weight: 400;
+  line-height: .84;
+  letter-spacing: -.065em;
+
+  text-shadow: 0 4px 30px rgba(0,0,0,.18);
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+
+.hero-description {
+  max-width: 340px;
+
+  margin-top: 32px;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+
+  color: rgba(255,255,255,.82);
+}
+
+
+/* bottom */
+
+.hero-bottom {
+  grid-column: 1 / -1;
+  grid-row: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+.hero-note {
+  display: flex;
+  gap: 18px;
+
+  font-size: 10px;
+  line-height: 1.45;
+
+  color: rgba(255,255,255,.65);
+}
+
+
+.note-number {
+  opacity: .45;
+}
+
+
+/* discover */
+
+.discover {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  font-size: 10px;
+
+  letter-spacing: .1em;
+
+  text-transform: uppercase;
+
+  transition:
+      transform .4s ease;
+}
+
+
+.discover:hover {
+  transform:
+      translateY(-3px);
+}
+
+
+.discover-circle {
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+      1px solid
+      rgba(255,255,255,.65);
+
+  border-radius: 50%;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+ FUTURE SECTIONS
+========================================================= */
+
+.placeholder-section {
+  min-height: 100vh;
+  position: relative;
+  z-index: 5;
+
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 10vw;
+
+}
+
+
+.placeholder-section span {
+  font-size: 10px;
+  letter-spacing: .2em;
+
+  opacity: .45;
+}
+
+
+.placeholder-section h2 {
+  margin-top: 15px;
+
+  font-family:
+      Georgia,
+      serif;
+
+  font-size:
+      clamp(60px, 9vw, 130px);
+
+  font-weight: 400;
+
+  letter-spacing: -.06em;
+}
+
+
+/* =========================================================
+ MOBILE MENU BUTTON
+========================================================= */
+
+.menu-button {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+
+.menu-button span {
+  display: block;
+
+  width: 22px;
+  height: 1px;
+
+  background: white;
+
+  margin: 5px 0;
+}
+
+
+/* =========================================================
+ MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+  position: fixed;
+
+  inset: 0;
+
+  background: #182f22;
+
+  z-index: 500;
+
+  transform:
+      translateX(100%);
+
+  transition:
+      transform .7s cubic-bezier(.77,0,.18,1);
+}
+
+
+.mobile-menu.open {
+  transform:
+      translateX(0);
+}
+
+
+.mobile-menu-inner {
+  padding: 30px;
+}
+
+
+.mobile-menu-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 10px;
+
+  letter-spacing: .15em;
+}
+
+
+.mobile-close {
+  border: 0;
+
+  background: none;
+
+  color: white;
+
+  font-size: 30px;
+
+  cursor: pointer;
+}
+
+
+.mobile-menu nav {
+  margin-top: 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+.mobile-menu nav a {
+  font-family:
+      Georgia,
+      serif;
+
+  font-size: 48px;
+
+  letter-spacing: -.05em;
+}
+
+
+/* =========================================================
+ RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+  .main-nav { display: none; }
+  .menu-button { display: block; }
+
+  .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding: 125px 24px 28px;
+  }
+
+  .hero-copy {
+      max-width: 75%;
+      margin-top: 3vh;
+  }
+
+  .hero h1 {
+      font-size: clamp(48px, 14vw, 78px);
+  }
+
+  .hero-description {
+      max-width: 280px;
+      font-size: 12px;
+  }
+
+  .hero-bottom {
+      width: 100%;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .logo-main {
+      font-size: 21px;
+  }
+
+
+  .logo-sub {
+      font-size: 6px;
+  }
+
+
+  .hero-copy {
+      transform:
+          translateY(-3vh);
+  }
+
+
+  .hero h1 {
+      font-size: 76px;
+  }
+
+
+  .hero-description {
+      margin-top: 24px;
+  }
+
+
+  .discover span:first-child {
+      display: none;
+  }
+
+}
+
+/* =========================================================
+   SOUND BUTTON
+========================================================= */
+
+.sound-button {
+
+  position: absolute;
+
+  right: 38px;
+  top: 30px;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 10px 14px;
+
+  border: 1px solid rgba(255,255,255,.45);
+
+  border-radius: 100px;
+
+  background: rgba(0,0,0,.12);
+
+  backdrop-filter: blur(10px);
+
+  color: white;
+
+  font-size: 9px;
+
+  letter-spacing: .14em;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transform: translateY(-5px);
+
+  transition:
+      opacity .4s ease,
+      transform .4s ease,
+      background .3s ease;
+}
+
+
+/*
+  Only show the button when audio autoplay
+  needs user interaction.
+*/
+
+.sound-button.visible {
+
+  opacity: 1;
+
+  pointer-events: auto;
+
+  transform: translateY(0);
+
+}
+
+
+.sound-button:hover {
+
+  background: rgba(255,255,255,.15);
+
+}
+
+
+.sound-button.sound-active {
+
+  background: rgba(255,255,255,.12);
+
+}
+
+
+.sound-icon {
+
+  font-size: 14px;
+
+  line-height: 1;
+}
+
+@media (max-width: 800px) {
+
+  .sound-button {
+
+      top: 24px;
+      right: 75px;
+
+  }
+
+}
+
+/* Hero layout: title on top, description below the tiles */
+.hero {
+  justify-content: flex-start;
+}
+
+.hero-copy {
+  max-width: none;
+  margin-top: 0;
+  transform: none;
+}
+
+.hero-lower {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hero-description {
+  margin-top: 0;
+}
+
+@media (min-width: 801px) {
+  .hero h1 {
+    font-size: clamp(56px, 7vw, 120px);
+    line-height: 1;
+  }
+}
+
+.hero-lower {
+  margin-top: 30vh;
+}
+
+/* Circle that rises from the bottom while scrolling */
+.dome {
+  position: fixed;
+  inset: 0;
+
+  background: #173d27;
+
+  z-index: 3;
+  pointer-events: none;
+
+  clip-path: circle(0px at 50% 100%);
+}
+
+/* Story section */
+.story-flow {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 0 8vw 25vh;
+}
+
+/* first screen: text in the centre of the dome */
+.sf-lonely {
+  min-height: 100vh;
+  padding-top: 42vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sf-lonely p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+}
+
+/* vertical line that draws itself while you scroll */
+.sf-line {
+  position: relative;
+  width: 1px;
+  height: 50vh;
+  margin-top: 40px;
+  background: rgba(245, 241, 232, .2);
+}
+
+.sf-line-fill {
+  position: absolute;
+  inset: 0;
+  background: #f5f1e8;
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+.sf-statement {
+  margin-top: 6vh;
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4.5vw, 68px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -.035em;
+}
+
+.sf-statement em {
+  font-style: italic;
+}
+
+.sf-copy {
+  max-width: 720px;
+  margin: 10vh auto 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.35;
+}
+
+.sf-copy p {
+  margin: 0;
+}
+
+.sf-copy p + p {
+  margin-top: 18px;
+}
+
+.sf-copy em {
+  font-style: italic;
+}
+
+.sf-small {
+  margin-top: 12vh;
+  font-size: 16px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(245, 241, 232, .8);
+}
+
+/* Skip button: bottom centre of the intro */
+.skip-button {
+  position: absolute;
+  left: 50%;
+  bottom: 38px;
+  transform: translateX(-50%);
+  z-index: 20;
+
+  padding: 12px 28px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 100px;
+
+  background: rgba(0,0,0,.12);
+  backdrop-filter: blur(10px);
+
+  color: white;
+  font-size: 12px;
+  letter-spacing: .16em;
+  cursor: pointer;
+
+  transition: background .3s ease;
+}
+
+.skip-button:hover {
+  background: rgba(255,255,255,.15);
+}
+
+/* "02 Story" label, top left of the story section */
+.story-note {
+  position: absolute;
+  top: 40px;
+  left: 8vw;
+  text-align: left;
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="A new kind of neighbourhood"
+    >
+
+    <title>HOME — A New Way of Living</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         INTRO / LAUNCH
+    ====================================================== -->
+
+    <section id="launch" class="launch">
+
+        <video
+            id="introVideo"
+            class="intro-video"
+            autoplay
+            muted
+            playsinline
+            preload="auto"
+        >
+            <source
+                src="assets/intro-video.mov"
+                type="video/quicktime"
+            >
+        </video>
+
+        <!-- cinematic dark overlay -->
+        <div class="launch-overlay"></div>
+
+        <div class="launch-content">
+
+            <button
+                id="soundButton"
+                class="sound-button"
+                type="button"
+                aria-label="Turn sound on"
+            >
+                <span class="sound-icon">♪</span>
+                <span id="soundText">SOUND ON</span>
+            </button>
+
+        </div>
+
+        <button
+            id="skipButton"
+            class="skip-button"
+            type="button"
+            aria-label="Skip intro"
+        >
+            SKIP
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         HOME
+    ====================================================== -->
+
+    <main id="home" class="home">
+
+        <!-- Background image -->
+        <div class="home-image"></div>
+
+        <!-- subtle cinematic layers -->
+        <div class="home-vignette"></div>
+        <div class="home-grain"></div>
+        <div class="dome" id="dome"></div>
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <header class="site-header">
+
+          <a
+              href="#home"
+              class="logo-mark"
+              aria-label="Emergent Friend"
+          >
+              <img src="assets/logo-4.png" alt="Emergent Friend logo">
+          
+              <svg
+                  class="logo-ring"
+                  viewBox="0 0 140 140"
+                  aria-hidden="true"
+              >
+                  <defs>
+                      <path
+                          id="logoCirclePath"
+                          d="M 70,70 m -53,0 a 53,53 0 1,1 106,0 a 53,53 0 1,1 -106,0"
+                      />
+                  </defs>
+          
+                  <text>
+                      <textPath href="#logoCirclePath">
+                          EMERGENT Friend · EMERGENT Friend ·
+                      </textPath>
+                  </text>
+              </svg>
+          </a>
+
+
+            <nav class="main-nav">
+
+                <a href="#home" data-section="home">
+                    Home
+                </a>
+
+                <a href="#story" data-section="story">
+                    Story
+                </a>
+
+                <a href="#how-it-works" data-section="how-it-works">
+                    How It Works
+                </a>
+
+                <a href="#our-friends" data-section="our-friends">
+                    Our Friends
+                </a>
+
+                <a href="#founder" data-section="founder">
+                    Founder
+                </a>
+
+            </nav>
+
+
+            <button
+                class="menu-button"
+                aria-label="Open navigation"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+        </header>
+
+
+        <!-- =================================================
+             HERO COPY
+        ================================================== -->
+
+        <section class="hero">
+
+          <div class="hero-copy">
+              <p class="eyebrow">
+                  LIVE INDEPENDENTLY. LIVE CONNECTED.
+              </p>
+      
+              <h1>Emergent Friend</h1>
+          </div>
+      
+          <div class="hero-lower">
+      
+              <p class="hero-description">
+                A discreet pendant that keeps trusted people close when help is needed.
+              </p>
+      
+              <div class="hero-bottom">
+      
+                  <div class="hero-note">
+                      <span class="note-number">01</span>
+                      <span>
+                          Home
+                      </span>
+                  </div>
+      
+                  <a href="#story" class="discover">
+                      <span>Discover the story</span>
+                      <span class="discover-circle">↓</span>
+                  </a>
+      
+              </div>
+      
+          </div>
+      
+      </section>
+
+
+        <!-- =================================================
+             FUTURE SECTIONS — PLACEHOLDERS
+             These allow the navigation to work immediately.
+        ================================================== -->
+
+        <section id="story" class="story-flow">
+
+            <div class="hero-note story-note">
+                <span class="note-number">02</span>
+                <span>Story</span>
+            </div>
+        
+            <div class="sf-lonely">
+                <p>Living alone doesn't mean being alone.</p>
+        
+                <div class="sf-line">
+                    <span class="sf-line-fill"></span>
+                </div>
+            </div>
+        
+            <h2 class="sf-statement">
+                Emergent Friend is built around a simple idea:
+            </h2>
+
+            <div class="sf-copy">
+                <p>when you need someone, help should feel close.</p>
+            </div>
+        
+        </section>
+
+        <section id="how-it-works" class="placeholder-section">
+            <span>03</span>
+            <h2>How It Works</h2>
+        </section>
+
+        <section id="our-friends" class="placeholder-section">
+            <span>04</span>
+            <h2>Our Friends</h2>
+        </section>
+
+        <section id="founder" class="placeholder-section">
+            <span>05</span>
+            <h2>Founder</h2>
+        </section>
+
+    </main>
+
+
+    <!-- Mobile navigation -->
+    <div class="mobile-menu">
+
+        <div class="mobile-menu-inner">
+
+            <div class="mobile-menu-top">
+                <span>MENU</span>
+
+                <button
+                    class="mobile-close"
+                    aria-label="Close navigation"
+                >
+                    ×
+                </button>
+            </div>
+
+            <nav>
+
+                <a href="#home">Home</a>
+                <a href="#story">Story</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#our-friends">Our Friends</a>
+                <a href="#founder">Founder</a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
