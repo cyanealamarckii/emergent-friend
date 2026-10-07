@@ -1269,7 +1269,7 @@ button {
 }
 
 .sf-line-end {
-  height: 40vh;
+  height: 50vh;
   margin: 12vh auto 0;   /* centred */
 }
 
@@ -1459,7 +1459,7 @@ button {
 .how-scroll-hint {
   position: absolute;
   right: 3.2vw;
-  bottom: 5.5vh;
+  bottom: 2vh;
   z-index: 30;
 
   display: flex;
@@ -1817,7 +1817,7 @@ button {
 
   .how-scroll-hint {
       right: 5vw;
-      bottom: 2.5vh;
+      bottom: 2vh;
   }
 
   .how-btn {
@@ -1860,4 +1860,127 @@ button {
   max-width: min(560px, 80vw);
   margin-left: auto;
   margin-right: auto;
+}
+
+/* =========================================================
+   HOW IT WORKS — statement + carousel stage
+========================================================= */
+
+.how-section {
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* statement screen: same position and style as the Story headline */
+.how-statement {
+  min-height: 0;                 /* was 100vh */
+  padding: 14vh 8vw 10vh;        /* was 42vh 8vw 0 */
+  text-align: center;
+}
+
+.how-statement h2 {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+
+  color: #f5f1e8;
+}
+
+/* the carousel lives in its own full-screen stage */
+.how-stage {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+}
+
+.how-stage .how-track {
+  gap: 0;
+  padding-right: 0;
+}
+
+.how-stage .how-slide {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .how-stage {
+    height: 100svh;
+    min-height: 650px;
+  }
+}
+
+/* longer line above the first photo */
+.how-stage .how-intro {
+  padding-top: 38vh;       /* line (30vh) + 8vh gap */
+}
+
+.how-stage .how-line {
+  height: 30vh;
+}
+
+@media (max-width: 768px) {
+  .how-stage .how-intro {
+    padding-top: 29vh;     /* line (23vh) + 6vh gap */
+  }
+
+  .how-stage .how-line {
+    height: 23vh;
+  }
+}
+
+.how-stage .how-product-image img {
+  max-height: 36vh;
+}
+
+@media (max-width: 768px) {
+  .how-stage .how-product-image img {
+    max-height: 34vh;
+  }
+}
+
+/* small description under each caption, same style as the "01 Trigger" label */
+.how-intro .step-desc {
+  max-width: min(480px, 80vw);
+  margin: 1.8vh auto 0;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: .04em;
+
+  color: rgba(245, 240, 231, .55);
+}
+
+/* the photo shrinks a little so the extra text still fits on screen */
+.how-stage .how-product-image img {
+  max-height: 32vh;       /* was 36vh */
+}
+
+@media (max-width: 768px) {
+  .how-stage .how-product-image img {
+    max-height: 28vh;     /* was 34vh */
+  }
+}
+
+/* keep the line above the sliding slides */
+.how-stage .how-line {
+  z-index: 5;
+  pointer-events: none;
+}
+
+.how-scroll-hint {
+  bottom: 0.8vh;          /* was 2vh */
+}
+
+@media (max-width: 768px) {
+  .how-scroll-hint {
+    bottom: 1vh;
+  }
 }
