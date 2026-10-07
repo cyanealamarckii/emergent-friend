@@ -396,3 +396,35 @@ if (howTrack) {
     window.addEventListener("resize", updateHowButtons);
     updateHowButtons();
 }
+
+/* =========================================================
+   JOIN OUR PILOT FORM
+========================================================= */
+
+const pilotForm = document.getElementById("pilotForm");
+const pilotMessage = document.getElementById("pilotMessage");
+
+if (pilotForm) {
+    pilotForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        pilotMessage.textContent = "Sending...";
+
+        try {
+            const response = await fetch(pilotForm.action, {
+                method: "POST",
+                body: new FormData(pilotForm),
+                headers: { Accept: "application/json" }
+            });
+
+            if (response.ok) {
+                pilotMessage.textContent = "Thank you. We'll be in touch soon.";
+                pilotForm.reset();
+            } else {
+                pilotMessage.textContent = "Something went wrong. Please try again.";
+            }
+        } catch (error) {
+            pilotMessage.textContent = "Something went wrong. Please try again.";
+        }
+    });
+}
