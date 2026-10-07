@@ -1984,3 +1984,344 @@ button {
     bottom: 1vh;
   }
 }
+
+/* =========================================================
+   LINE OUT OF HOW IT WORKS + 04 OUR FRIENDS
+========================================================= */
+
+.how-line-end {
+  height: 50vh;
+  margin: 0 auto;
+}
+
+.friends-section {
+  position: relative;
+  z-index: 5;
+
+  min-height: 100vh;
+  padding: 0 8vw 14vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* "04 Our Friends" label, same position as 02 Story and 03 How It Works */
+.friends-note {
+  position: absolute;
+  top: 40px;
+  left: 8vw;
+  text-align: left;
+}
+
+.friends-line {
+  height: 30vh;
+  margin: 0 auto;
+}
+
+/* video box: 16:9 */
+.friends-video {
+  width: min(900px, 72vw);
+  aspect-ratio: 16 / 9;
+  margin-top: 8vh;          /* gap under the line, same idea as the photo */
+
+  border-radius: 28px;
+  overflow: hidden;
+
+  background: rgba(245, 240, 231, .06);
+  border: 1px solid rgba(245, 240, 231, .18);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.friends-play {
+  width: 64px;
+  height: 64px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(245, 240, 231, .5);
+  border-radius: 50%;
+
+  font-size: 18px;
+  padding-left: 3px;        /* optically centres the triangle */
+}
+
+.friends-video p {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(245, 240, 231, .55);
+}
+
+/* for the real video later */
+.friends-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .friends-note { left: 5vw; }
+
+  .friends-line { height: 25vh; }
+
+  .friends-video {
+    width: 88vw;
+    margin-top: 6vh;
+    border-radius: 20px;
+  }
+}
+
+/* shorter lines + tighter gap to the video */
+.how-line-end {
+  height: 30vh;           /* was 50vh */
+}
+
+.friends-line {
+  height: 20vh;           /* was 30vh */
+}
+
+.friends-video {
+  margin-top: 4vh;        /* was 8vh */
+}
+
+@media (max-width: 768px) {
+  .friends-line {
+    height: 18vh;         /* was 25vh */
+  }
+
+  .friends-video {
+    margin-top: 3vh;      /* was 6vh */
+  }
+}
+
+/* label + video sit together under the line */
+.friends-stage {
+  width: min(900px, 72vw);
+  margin-top: 4vh;          /* gap between the line and the label */
+}
+
+.friends-note {
+  position: static;         /* no longer pinned to the top-left corner */
+  margin-bottom: 14px;      /* gap between the label and the video */
+}
+
+.friends-stage .friends-video {
+  width: 100%;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .friends-stage {
+    width: 88vw;
+    margin-top: 3vh;
+  }
+}
+
+/* more space between the 04 label and the video */
+.friends-note {
+  margin-bottom: 56px;      /* was 14px */
+}
+
+@media (max-width: 768px) {
+  .friends-note {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 800px) {
+  .mobile-menu nav {
+    margin-top: 70px;
+    gap: 12px;
+  }
+
+  .mobile-menu nav a {
+    font-size: 40px;
+  }
+}
+
+/* =========================================================
+   LINE OUT OF OUR FRIENDS + 05 JOIN OUR PILOT
+========================================================= */
+
+.friends-line-end {
+  height: 20vh;
+  margin: 8vh auto 0;
+}
+
+.pilot-section {
+  position: relative;
+  z-index: 5;
+
+  min-height: 100vh;
+  padding: 0 8vw 14vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pilot-line {
+  height: 20vh;
+  margin: 0 auto;
+}
+
+.pilot-stage {
+  width: min(700px, 80vw);
+  margin-top: 4vh;
+}
+
+.pilot-note {
+  margin-bottom: 56px;
+}
+
+.pilot-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  color: #f5f1e8;
+}
+
+.pilot-form {
+  margin-top: 6vh;
+}
+
+/* ticks */
+.pilot-options {
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+}
+
+.pilot-options legend {
+  width: 100%;
+  margin-bottom: 18px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(245, 240, 231, .55);
+}
+
+.pilot-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  color: #f5f1e8;
+}
+
+.pilot-check input {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 20px;
+  height: 20px;
+  margin: 0;
+
+  border: 1px solid rgba(245, 240, 231, .6);
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: background .3s ease, border-color .3s ease;
+}
+
+.pilot-check input:checked {
+  background: #f5f1e8;
+  border-color: #f5f1e8;
+  box-shadow: inset 0 0 0 4px #173d27;   /* ring effect */
+}
+
+.pilot-check input:focus-visible {
+  outline: 2px solid rgba(245, 240, 231, .8);
+  outline-offset: 3px;
+}
+
+/* email + button */
+.pilot-email-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 5vh;
+}
+
+.pilot-email-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 22px;
+
+  border: 1px solid rgba(245, 240, 231, .4);
+  border-radius: 100px;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 15px;
+  color: #f5f1e8;
+}
+
+.pilot-email-row input::placeholder {
+  color: rgba(245, 240, 231, .45);
+}
+
+.pilot-email-row input:focus {
+  outline: none;
+  border-color: rgba(245, 240, 231, .9);
+}
+
+.pilot-email-row button {
+  padding: 16px 34px;
+
+  border: 1px solid #f5f1e8;
+  border-radius: 100px;
+  background: #f5f1e8;
+  color: #173d27;
+
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  transition: background .3s ease, color .3s ease;
+}
+
+.pilot-email-row button:hover {
+  background: transparent;
+  color: #f5f1e8;
+}
+
+.pilot-message {
+  min-height: 1.5em;
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: rgba(245, 240, 231, .7);
+}
+
+@media (max-width: 768px) {
+  .pilot-stage { width: 88vw; }
+  .pilot-note { margin-bottom: 36px; }
+  .pilot-line, .friends-line-end { height: 18vh; }
+  .pilot-email-row { flex-direction: column; }
+}
+
+/* extend the 04 line down to the start of the 05 line */
+.friends-line-end {
+  flex: 1 0 20vh;              /* grows to fill the empty space below it */
+  height: auto;
+  margin: 8vh auto -14vh;      /* -14vh cancels the section's bottom padding */
+}
+
+@media (max-width: 768px) {
+  .friends-line-end {
+    flex-basis: 18vh;
+  }
+}
