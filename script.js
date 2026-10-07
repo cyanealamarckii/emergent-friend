@@ -276,22 +276,25 @@ window.addEventListener("resize", updateDome);
 updateDome();
 
 /* =========================================================
-   STORY: VERTICAL LINE DRAWS WHILE SCROLLING
+   STORY: VERTICAL LINES DRAW WHILE SCROLLING
 ========================================================= */
 
-const sfLine = document.querySelector(".sf-line");
-const sfFill = document.querySelector(".sf-line-fill");
+const sfLines = document.querySelectorAll(".sf-line");
 
 function updateLine() {
-    if (!sfLine || !sfFill) return;
-
-    const rect = sfLine.getBoundingClientRect();
     const h = window.innerHeight;
 
-    // 0 when the line first arrives, 1 when fully drawn
-    const p = Math.min(Math.max((h * 0.6 - rect.top) / rect.height, 0), 1);
+    sfLines.forEach(line => {
+        const fill = line.querySelector(".sf-line-fill");
+        if (!fill) return;
 
-    sfFill.style.transform = `scaleY(${p})`;
+        const rect = line.getBoundingClientRect();
+
+        // 0 when the line first arrives, 1 when fully drawn
+        const p = Math.min(Math.max((h * 0.6 - rect.top) / rect.height, 0), 1);
+
+        fill.style.transform = `scaleY(${p})`;
+    });
 }
 
 window.addEventListener("scroll", updateLine, { passive: true });
@@ -350,3 +353,46 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         smoothScrollTo(y);
     });
 });
+
+/* =========================================================
+   HOW IT WORKS — ARROW NAVIGATION ONLY
+========================================================= */
+
+const howTrack = document.querySelector(".how-track");
+const howBtnPrev = document.querySelector(".how-btn-prev");
+const howBtnNext = document.querySelector(".how-btn-next");
+const howHint = document.getElementById("howHint");
+
+if (howTrack) {
+
+    const slideCount = howTrack.children.length;
+
+    function currentIndex() {
+        return Math.round(howTrack.scrollLeft / howTrack.clientWidth);
+    }
+
+    function goTo(index) {
+        const i = Math.max(0, Math.min(index, slideCount - 1));
+        howTrack.scrollTo({
+            left: i * howTrack.clientWidth,
+            behavior: "smooth"
+        });
+    }
+
+    function updateHowButtons() {
+        const i = currentIndex();
+        const atStart = i <= 0;
+        const atEnd = i >= slideCount - 1;
+
+        if (howBtnPrev) howBtnPrev.disabled = atStart;
+        if (howBtnNext) howBtnNext.disabled = atEnd;
+        if (howHint) howHint.classList.toggle("hidden", atEnd);
+    }
+
+    if (howBtnPrev) howBtnPrev.addEventListener("click", () => goTo(currentIndex() - 1));
+    if (howBtnNext) howBtnNext.addEventListener("click", () => goTo(currentIndex() + 1));
+
+    howTrack.addEventListener("scroll", updateHowButtons, { passive: true });
+    window.addEventListener("resize", updateHowButtons);
+    updateHowButtons();
+}
