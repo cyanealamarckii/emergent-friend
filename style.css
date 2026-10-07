@@ -585,6 +585,326 @@ button {
   letter-spacing: -.06em;
 }
 
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.how-section {
+  position: relative;
+  z-index: 6;
+
+  min-height: 100vh;
+
+  background: #f5f1e8;
+  color: #173d27;
+
+  padding: 12vh 5vw 10vh;
+
+  border-radius: 70px 70px 0 0;
+
+  overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+ HEADER
+--------------------------------------------------------- */
+
+.how-header {
+  max-width: 1400px;
+  margin: 0 auto 8vh;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 8vw;
+  align-items: start;
+}
+
+.how-note .note-number {
+  opacity: .45;
+}
+
+.how-intro .how-caption {
+  margin: 0;
+  max-width: none;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+
+  color: #f5f0e7;
+}
+
+.how-caption em {
+  font-style: normal;     /* same style on both lines, like your reference */
+  font-weight: 400;
+}
+
+/* ---------------------------------------------------------
+ CAROUSEL
+--------------------------------------------------------- */
+
+.how-carousel {
+  position: relative;
+
+  max-width: 1500px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+
+.how-track {
+  width: 100%;
+
+  display: flex;
+  gap: 18px;
+
+  overflow: hidden;
+
+  scroll-behavior: smooth;
+}
+
+
+/* ---------------------------------------------------------
+ CARD
+--------------------------------------------------------- */
+
+.how-card {
+  flex: 0 0 calc(20% - 15px);
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.how-image-placeholder {
+  aspect-ratio: 4 / 5;
+
+  width: 100%;
+
+  background:
+      linear-gradient(
+          135deg,
+          rgba(23, 61, 39, .06),
+          rgba(23, 61, 39, .12)
+      );
+
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(23, 61, 39, .12);
+
+  overflow: hidden;
+}
+
+
+.how-image-placeholder span {
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+
+  color: rgba(23, 61, 39, .4);
+}
+
+
+/* ---------------------------------------------------------
+ CARD COPY
+--------------------------------------------------------- */
+
+.how-card-copy {
+  padding: 24px 4px 0;
+}
+
+
+.how-step {
+  display: flex;
+  gap: 14px;
+
+  font-size: 10px;
+
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  color: rgba(23, 61, 39, .5);
+}
+
+
+.how-step span {
+  color: #173d27;
+}
+
+
+.how-card-copy p {
+  margin: 14px 0 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 19px;
+  line-height: 1.35;
+
+  color: #173d27;
+}
+
+
+/* ---------------------------------------------------------
+ ARROWS
+--------------------------------------------------------- */
+
+.how-arrow {
+  position: absolute;
+
+  top: calc(50% - 45px);
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(23, 61, 39, .35);
+  border-radius: 50%;
+
+  background: rgba(245, 241, 232, .9);
+
+  color: #173d27;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  transition:
+      transform .3s ease,
+      background .3s ease;
+}
+
+
+.how-arrow:hover {
+  transform: scale(1.08);
+  background: #173d27;
+  color: #f5f1e8;
+}
+
+
+.how-prev {
+  left: -24px;
+}
+
+
+.how-next {
+  right: -24px;
+}
+
+
+/* ---------------------------------------------------------
+ DOTS
+--------------------------------------------------------- */
+
+.how-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 7vh;
+}
+
+
+.how-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(23, 61, 39, .18);
+
+  cursor: pointer;
+
+  transition:
+      transform .3s ease,
+      background .3s ease;
+}
+
+
+.how-dot.active {
+  background: #173d27;
+  transform: scale(1.35);
+}
+
+
+/* ---------------------------------------------------------
+ MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 800px) {
+
+  .how-section {
+      padding: 10vh 6vw 8vh;
+      border-radius: 40px 40px 0 0;
+  }
+
+
+  .how-header {
+      display: block;
+
+      margin-bottom: 7vh;
+  }
+
+  .how-intro h2 {
+      font-size: clamp(46px, 13vw, 72px);
+  }
+
+
+  .how-intro p {
+      margin-top: 28px;
+      font-size: 19px;
+  }
+
+
+  .how-track {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+
+      scrollbar-width: none;
+
+      padding-right: 12vw;
+  }
+
+  .how-track::-webkit-scrollbar {
+      display: none;
+  }
+
+
+  .how-card {
+      flex: 0 0 78vw;
+
+      scroll-snap-align: start;
+  }
+
+
+  .how-arrow {
+      display: none;
+  }
+
+
+  .how-dots {
+      margin-top: 5vh;
+  }
+
+}
+
 
 /* =========================================================
  MOBILE MENU BUTTON
@@ -910,7 +1230,7 @@ button {
   position: relative;
   z-index: 5;
   text-align: center;
-  padding: 0 8vw 25vh;
+  padding: 0 8vw 0;   /* was 0 8vw 25vh */
 }
 
 /* first screen: text in the centre of the dome */
@@ -946,6 +1266,11 @@ button {
   background: #f5f1e8;
   transform-origin: top;
   transform: scaleY(0);
+}
+
+.sf-line-end {
+  height: 40vh;
+  margin: 12vh auto 0;   /* centred */
 }
 
 .sf-statement {
@@ -1025,4 +1350,514 @@ button {
   top: 40px;
   left: 8vw;
   text-align: left;
+}
+
+/* =========================================================
+   HOW IT WORKS — HORIZONTAL EDITORIAL EXPERIENCE
+========================================================= */
+
+.how-section {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+
+  background: #173d27;
+  color: #f5f0e7;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+ SECTION LABEL
+========================================================= */
+
+/* 03 How It Works — same style as 01 Home / 02 Story */
+
+.how-note {
+  position: absolute;
+
+  top: 40px;
+  left: 8vw;
+
+  z-index: 20;
+
+  display: flex;
+  gap: 18px;
+
+  font-size: 10px;
+  line-height: 1.45;
+
+  letter-spacing: normal;      /* removes the extra spacing */
+  text-transform: none;        /* removes ALL CAPS */
+
+  color: rgba(255,255,255,.65);
+
+  text-align: left;
+
+  pointer-events: none;
+}
+
+.how-note .note-number {
+  opacity: .45;
+}
+
+/* =========================================================
+ HORIZONTAL TRACK
+========================================================= */
+
+.how-track {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  width: 100%;
+
+  overflow: hidden;            /* no manual horizontal scrolling */
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.how-btn {
+  position: absolute;
+  top: 58%;
+  transform: translateY(-50%);
+  z-index: 30;
+
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(245, 240, 231, .5);
+  border-radius: 50%;
+
+  background: transparent;
+  color: #f5f0e7;
+  font-size: 1.1rem;
+  cursor: pointer;
+
+  transition: background .35s ease, color .35s ease, opacity .35s ease;
+}
+
+.how-btn-prev { left: 3.2vw; }
+.how-btn-next { right: 3.2vw; }
+
+.how-btn:hover {
+  background: #f5f0e7;
+  color: #123f2b;
+}
+
+/* hidden (not just faded) when there's nowhere to go */
+.how-btn:disabled {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.how-scroll-hint {
+  position: absolute;
+  right: 3.2vw;
+  bottom: 5.5vh;
+  z-index: 30;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  opacity: 0.55;
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+
+.how-scroll-hint.hidden { opacity: 0; }
+
+.how-scroll-arrow {
+  font-size: 1.1rem;
+  animation: howArrowMove 1.8s ease-in-out infinite;
+}
+
+@keyframes howArrowMove {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(7px); }
+}
+
+/* =========================================================
+ EACH SLIDE
+========================================================= */
+
+.how-slide {
+  position: relative;
+
+  flex: 0 0 100vw;
+
+  width: 100vw;
+  height: 100vh;
+
+  scroll-snap-align: start;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+ INTRO / PRODUCT SLIDE
+========================================================= */
+
+.how-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 28vh 7vw 0;   /* was 20vh: line (20vh) + 8vh gap */
+}
+
+.how-product-image {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+
+  overflow: hidden;
+  border-radius: 28px;
+  flex-shrink: 0;
+}
+
+.how-product-image img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(62vw, 900px);
+  max-height: 42vh;
+
+  object-fit: contain;
+  border-radius: inherit;
+}
+
+.how-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0;
+
+  height: 20vh;          /* must equal the padding-top above */
+}
+
+
+/* =========================================================
+ CAPTION UNDER PRODUCT
+========================================================= */
+
+.how-intro-bottom {
+  position: relative;
+  margin: 5vh auto 0;     /* was 2.8vh */
+  text-align: center;
+}
+
+
+.how-caption {
+  margin: 0;
+
+  font-size: clamp(1.4rem, 2vw, 2.4rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.025em;
+
+  color: #f5f0e7;
+}
+
+.how-caption em {
+  font-weight: 400;
+}
+
+
+/* =========================================================
+ RIGHT ARROW
+========================================================= */
+
+.how-next {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(245, 240, 231, 0.5);
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+
+  cursor: pointer;
+
+  transition:
+      background 0.35s ease,
+      color 0.35s ease,
+      transform 0.35s ease;
+}
+
+.how-next span {
+  display: block;
+
+  font-size: 1.2rem;
+
+  line-height: 1;
+
+  transform: translateX(1px);
+}
+
+.how-next:hover {
+  background: #f5f0e7;
+
+  color: #123f2b;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+ STEP SLIDES
+========================================================= */
+
+.how-step {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 12vh 10vw 10vh;
+
+  box-sizing: border-box;
+}
+
+
+/* number */
+
+.how-step-number {
+  margin-bottom: 2vh;
+
+  font-size: 0.85rem;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.55;
+}
+
+
+/* title */
+
+.how-step h2 {
+  max-width: 900px;
+
+  margin: 0;
+
+  font-size: clamp(5rem, 11vw, 13rem);
+
+  line-height: 0.82;
+
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+}
+
+
+/* description */
+
+.how-step p {
+  max-width: 480px;
+
+  margin: 5vh 0 0;
+
+  font-size: clamp(1.2rem, 1.6vw, 2rem);
+
+  line-height: 1.25;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+ DIFFERENT POSITIONING FOR EACH STEP
+ Keeps the horizontal journey editorial rather than
+ looking like five identical cards.
+========================================================= */
+
+.how-step:nth-child(3) {
+  justify-content: flex-end;
+
+  padding-bottom: 13vh;
+}
+
+.how-step:nth-child(4) {
+  justify-content: center;
+
+  padding-left: 18vw;
+}
+
+.how-step:nth-child(5) {
+  justify-content: flex-start;
+
+  padding-top: 25vh;
+}
+
+.how-step:nth-child(6) {
+  justify-content: flex-end;
+
+  padding-left: 22vw;
+  padding-bottom: 14vh;
+}
+
+.how-step:nth-child(7) {
+  justify-content: center;
+
+  padding-left: 12vw;
+}
+
+
+/* =========================================================
+ SCROLL INDICATOR
+========================================================= */
+
+@keyframes howArrowMove {
+
+  0%,
+  100% {
+      transform: translateX(0);
+  }
+
+  50% {
+      transform: translateX(7px);
+  }
+
+}
+
+
+/* =========================================================
+ MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .how-section {
+      height: 100svh;
+      min-height: 650px;
+  }
+
+
+  .how-note {
+    top: 40px;
+    left: 5vw;
+    gap: 8px;
+    font-size: 10px;
+  }
+
+
+  .how-intro {
+    padding: 21vh 5vw 0;
+  }
+  
+  .how-product-image img {
+    max-width: 90vw;
+    max-height: 42vh;
+  }
+  
+  .how-line {
+    height: 15vh;          /* same as the mobile padding-top */
+  }
+  
+  .how-intro-bottom {
+    margin-top: 4vh;
+  }
+
+  .how-caption {
+      font-size: 17px;
+  }
+
+
+  .how-next {
+      width: 38px;
+      height: 38px;
+  }
+
+
+  .how-step {
+      padding:
+          15vh
+          8vw
+          10vh;
+  }
+
+
+  .how-step h2 {
+      font-size: clamp(
+          4rem,
+          19vw,
+          8rem
+      );
+  }
+
+
+  .how-step p {
+      max-width: 75vw;
+
+      margin-top: 4vh;
+
+      font-size: 1.15rem;
+  }
+
+
+  .how-scroll-hint {
+      right: 5vw;
+      bottom: 2.5vh;
+  }
+
+  .how-btn {
+    top: auto;
+    bottom: 4vh;
+    transform: none;
+    width: 42px;
+    height: 42px;
+  }
+  
+  .how-btn-prev { left: 5vw; }
+  .how-btn-next { right: 5vw; }
+  
+  .how-scroll-hint {
+    right: auto;
+    left: 50%;
+    bottom: 5vh;
+    transform: translateX(-50%);
+  }
+
+}
+
+/* =========================================================
+   STEP CARDS
+========================================================= */
+
+/* small label above each step caption */
+.how-intro .step-label {
+  margin: 0 0 1.2vh;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .08em;
+
+  color: rgba(245, 240, 231, .55);
+}
+
+/* keep long sentences from stretching too wide */
+.how-intro .how-caption {
+  max-width: min(560px, 80vw);
+  margin-left: auto;
+  margin-right: auto;
 }
