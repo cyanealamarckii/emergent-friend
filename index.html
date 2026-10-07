@@ -136,6 +136,10 @@
                     Our Friends
                 </a>
 
+                <a href="#pilot" data-section="pilot">
+                    Join Our Pilot
+                </a>
+
                 <a href="#founder" data-section="founder">
                     Founder
                 </a>
@@ -327,17 +331,96 @@
 
     </div><!-- end .how-stage -->
 
+    <!-- line leading into 04 Our Friends -->
+    <div class="sf-line how-line-end">
+        <span class="sf-line-fill"></span>
+    </div>
+
 </section>
 
-        <section id="our-friends" class="placeholder-section">
-            <span>04</span>
-            <h2>Our Friends</h2>
-        </section>
+<section id="our-friends" class="friends-section">
 
-        <section id="founder" class="placeholder-section">
-            <span>05</span>
-            <h2>Founder</h2>
-        </section>
+    <!-- line continuing from How It Works -->
+    <div class="sf-line friends-line">
+        <span class="sf-line-fill"></span>
+    </div>
+
+    <div class="friends-stage">
+
+        <div class="hero-note friends-note">
+            <span class="note-number">04</span>
+            <span>Our Friends</span>
+        </div>
+
+        <!-- INTERVIEW VIDEO PLACEHOLDER -->
+        <div class="friends-video">
+            <div class="friends-play">▶</div>
+            <p>Interview video coming soon</p>
+        </div>
+
+    </div>
+
+    <!-- line leading into 05 Join Our Pilot -->
+    <div class="sf-line friends-line-end">
+        <span class="sf-line-fill"></span>
+    </div>
+
+</section>
+
+<section id="pilot" class="pilot-section">
+
+    <!-- line continuing from Our Friends -->
+    <div class="sf-line pilot-line">
+        <span class="sf-line-fill"></span>
+    </div>
+
+    <div class="pilot-stage">
+
+        <div class="hero-note pilot-note">
+            <span class="note-number">05</span>
+            <span>Join Our Pilot</span>
+        </div>
+
+        <h2 class="pilot-title">Be one of our first friends.</h2>
+
+        <form class="pilot-form" id="pilotForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+            <fieldset class="pilot-options">
+                <legend>I'm joining the pilot</legend>
+
+                <label class="pilot-check">
+                    <input type="checkbox" name="joining_as" value="For myself">
+                    <span>For myself</span>
+                </label>
+
+                <label class="pilot-check">
+                    <input type="checkbox" name="joining_as" value="For someone else">
+                    <span>For someone else</span>
+                </label>
+
+                <label class="pilot-check">
+                    <input type="checkbox" name="joining_as" value="As an organisation">
+                    <span>As an organisation</span>
+                </label>
+            </fieldset>
+
+            <div class="pilot-email-row">
+                <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+                <button type="submit">Join</button>
+            </div>
+
+            <p class="pilot-message" id="pilotMessage" role="status"></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+<section id="founder" class="placeholder-section">
+    <span>06</span>
+    <h2>Founder</h2>
+</section>
 
     </main>
 
@@ -364,6 +447,7 @@
                 <a href="#story">Story</a>
                 <a href="#how-it-works">How It Works</a>
                 <a href="#our-friends">Our Friends</a>
+                <a href="#pilot">Join Our Pilot</a>
                 <a href="#founder">Founder</a>
 
             </nav>
