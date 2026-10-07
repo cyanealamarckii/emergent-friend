@@ -2325,3 +2325,194 @@ button {
     flex-basis: 18vh;
   }
 }
+
+/* =========================================================
+   LINE OUT OF JOIN OUR PILOT + 06 FOUNDER
+========================================================= */
+
+/* stretches down to meet the line entering Founder (same method as 04 to 05) */
+.pilot-line-end {
+  flex: 1 0 20vh;
+  height: auto;
+  margin: 8vh auto -14vh;
+}
+
+.founder-section {
+  position: relative;
+  z-index: 5;
+
+  min-height: 100vh;
+  padding: 0 8vw 16vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.founder-line {
+  height: 20vh;
+  margin: 0 auto;
+}
+
+.founder-stage {
+  width: min(700px, 80vw);
+  margin-top: 4vh;
+}
+
+.founder-note {
+  margin-bottom: 56px;
+}
+
+/* the two bold, larger lines */
+.founder-lead {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(28px, 3.4vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  color: #f5f1e8;
+}
+
+.founder-copy {
+  margin: 4vh 0;
+}
+
+.founder-copy p,
+.founder-sign {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 1.5vw, 21px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(245, 241, 232, .85);
+}
+
+.founder-copy p + p {
+  margin-top: 20px;
+}
+
+.founder-sign {
+  margin-top: 4vh;
+}
+
+@media (max-width: 768px) {
+  .founder-stage { width: 88vw; }
+  .founder-note { margin-bottom: 36px; }
+  .pilot-line-end { flex-basis: 18vh; }
+  .founder-line { height: 18vh; }
+}
+
+/* founder: headline lines not bold */
+.founder-lead {
+  font-weight: 400;
+}
+
+/* the part containers no longer need the top gap, the lines provide it */
+.founder-stage {
+  margin-top: 0;
+}
+
+.founder-copy {
+  margin: 0;
+}
+
+/* lines between the three parts */
+.founder-mid-line {
+  height: 20vh;
+  margin: 6vh auto;
+}
+
+.founder-sign {
+  margin-top: 3vh;
+}
+
+@media (max-width: 768px) {
+  .founder-mid-line {
+    height: 16vh;
+    margin: 5vh auto;
+  }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+  position: relative;
+  z-index: 5;
+
+  padding: 10vh 8vw 5vh;
+
+  background: #173d27;
+  border-top: 1px solid rgba(245, 240, 231, .18);
+  color: #f5f1e8;
+}
+
+.footer-top {
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+}
+
+.footer-tag {
+  margin-top: 14px;
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(245, 240, 231, .55);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 27px;
+
+  margin-top: 8vh;
+}
+
+.footer-nav a {
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .78);
+  transition: color .3s ease;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 8vh;
+  padding-top: 24px;
+  border-top: 1px solid rgba(245, 240, 231, .12);
+
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: rgba(245, 240, 231, .55);
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 8vh 6vw 4vh;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
