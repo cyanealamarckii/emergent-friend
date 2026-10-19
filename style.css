@@ -2811,3 +2811,11 @@ button {
     padding-top: 22vh;              /* line (16vh) + 6vh gap */
   }
 }
+
+.hero-description {
+  max-width: none;
+}
+
+.hero-description {
+  text-wrap: balance;
+}
