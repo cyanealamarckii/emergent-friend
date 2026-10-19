@@ -2610,3 +2610,204 @@ button {
   border: 0;
   display: block;
 }
+
+/* =========================================================
+   05 OUR PRODUCTS
+========================================================= */
+
+.products-section {
+  position: relative;
+  z-index: 5;
+
+  min-height: 100vh;
+  padding: 0 8vw 14vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-line {
+  height: 20vh;
+  margin: 0 auto;
+}
+
+.products-note {
+  position: absolute;
+  top: 40px;
+  left: 8vw;
+  text-align: left;
+}
+
+/* same size and style as the 03 headline */
+.products-title {
+  max-width: 1100px;
+  margin: 8vh auto 0;
+  text-align: center;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+
+  color: #f5f1e8;
+}
+
+.products-grid {
+  width: min(900px, 80vw);
+  margin-top: 8vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vh 3vw;
+}
+
+.product-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+.product-name {
+  margin-top: 2.5vh;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #f5f0e7;
+}
+
+.product-btn {
+  margin-top: 1.8vh;
+  padding: 12px 26px;
+
+  border: 1px solid rgba(245, 240, 231, .25);
+  border-radius: 100px;
+  background: transparent;
+  color: rgba(245, 240, 231, .45);
+
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: not-allowed;
+}
+
+/* line out, stretches to meet the line entering 06 */
+.products-line-end {
+  flex: 1 0 20vh;
+  height: auto;
+  margin: 8vh auto -14vh;
+}
+
+@media (max-width: 768px) {
+  .products-note { left: 5vw; }
+  .products-title { margin-top: 6vh; }
+
+  .products-grid {
+    width: 88vw;
+    margin-top: 6vh;
+    grid-template-columns: 1fr;
+    gap: 6vh;
+  }
+
+  .product-card img { border-radius: 20px; }
+  .products-line-end { flex-basis: 18vh; }
+}
+
+/* seven links now: keep the mobile menu on one screen */
+@media (max-width: 800px) {
+  .mobile-menu nav {
+    margin-top: 60px;
+    gap: 8px;
+  }
+
+  .mobile-menu nav a {
+    font-size: 34px;
+  }
+}
+
+/* line between the title and the product photos */
+.products-mid-line {
+  height: 20vh;
+  margin: 8vh auto 0;
+}
+
+@media (max-width: 768px) {
+  .products-mid-line {
+    height: 16vh;
+    margin-top: 6vh;
+  }
+}
+
+/* shorter line under the first Story headline */
+.sf-lonely .sf-line {
+  height: 20vh;           /* was 50vh */
+  margin-top: 8vh;        /* was 40px */
+}
+
+@media (max-width: 768px) {
+  .sf-lonely .sf-line {
+    height: 16vh;
+    margin-top: 6vh;
+  }
+}
+
+/* short line under the 03 headline */
+.how-statement-line {
+  height: 20vh;
+  margin: 8vh auto 0;
+}
+
+@media (max-width: 768px) {
+  .how-statement-line {
+    height: 16vh;
+    margin-top: 6vh;
+  }
+}
+
+/* let the first Story block shrink with its content */
+.sf-lonely {
+  min-height: 0;
+}
+
+/* gap between the short line and "Emergent Friend is built..." */
+.sf-statement {
+  margin-top: 8vh;
+}
+
+@media (max-width: 768px) {
+  .sf-statement {
+    margin-top: 6vh;
+  }
+}
+
+/* one short line between the headline and the first photo */
+.how-statement {
+  padding-bottom: 8vh;              /* gap under the headline, same as Story */
+}
+
+.how-stage .how-line {
+  height: 20vh;                     /* was 30vh */
+}
+
+.how-stage .how-intro {
+  padding-top: 28vh;                /* line (20vh) + 8vh gap above the photo */
+}
+
+@media (max-width: 768px) {
+  .how-statement {
+    padding-bottom: 6vh;
+  }
+
+  .how-stage .how-line {
+    height: 16vh;
+  }
+
+  .how-stage .how-intro {
+    padding-top: 22vh;              /* line (16vh) + 6vh gap */
+  }
+}
